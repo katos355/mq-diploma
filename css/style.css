@@ -102,7 +102,7 @@ form {
 .list {
 	display: flex;
 	justify-content: space-between;
-	column-gap: 34px;
+	/* column-gap: 34px; */
 }
 
 .head {
@@ -131,11 +131,12 @@ form {
 	color: #ffffff;
 	text-transform: uppercase;
 	z-index: 4;
-	margin: 143px 0px 0px 0px;
+	margin: 143px auto;
 	line-height: 75px;
 	text-align: center;
 	position: relative;
 	padding: 0px 0px 144px 0px;
+	max-width: 685px;
 }
 .trend__title {
 	color: #000;
@@ -160,8 +161,22 @@ form {
 
 	column-gap: 4px;
 }
+.trend-cards::before {
+	/* content: "";
+	display: block; 
+	position: absolute;
+	background-color: black;
+	opacity: 0.5;
+	z-index: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%; */
+}
+
 .trend-subtitle-block {
 	display: flex;
+	flex-wrap: wrap;
 	column-gap: 18px;
 }
 .trend-subtitle {
@@ -180,6 +195,7 @@ form {
 }
 .trend-card {
 	background-image: url(../images/trend1.jpg);
+	background-color: rgba(0, 0, 0, 0.5);
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 310px;
@@ -187,6 +203,15 @@ form {
 	padding-top: 20px;
 	width: 25%;
 	gap: 4px;
+}
+.trend-card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
 }
 .trend-card:nth-child(2) {
 	background-image: url(../images/trend2.jpg);
@@ -237,9 +262,15 @@ form {
 }
 .image {
 	margin: 0px 30px 0px 0px;
+	width: 380px;
+	/* height: 294px; */
+	/* background-color: #e3dee9; */
+
+	flex-shrink: 0;
 }
 .subtitle {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 22px;
 	margin: 0px 0px 15px 0px;
 }
@@ -342,6 +373,10 @@ form {
 	padding: 19px 0px 19px 19px;
 	display: block;
 }
+.search-field:focus {
+	outline: 1px solid #b59f5b;
+	box-shadow: 0 2px 2px rgba(181, 159, 91, 0.82);
+}
 
 .search {
 	margin: 59px 0px 0px 0px;
@@ -371,6 +406,10 @@ form {
 	font-size: 13px;
 	padding: 17px 0px 17px 18px;
 	margin: 22px 0px 0px 0px;
+}
+.mailing-input:focus {
+	outline: 1px solid #b59f5b;
+	box-shadow: 0 2px 2px rgba(181, 159, 91, 0.82);
 }
 .mailing-button {
 	display: flex;
@@ -403,9 +442,13 @@ form {
 	row-gap: 5px;
 	column-gap: 5px;
 	padding: 7px 13px 7px 13px;
+	cursor: pointer;
 }
 .tag-link {
 	color: #000;
+}
+.tag-link:hover {
+	text-shadow: -1px 0 2px rgba(0, 0, 0, 0.6);
 }
 .tag {
 	margin: 60px 0px 0px 0px;
@@ -432,6 +475,9 @@ form {
 }
 .themes-link {
 	color: #000;
+}
+.themes-link:hover {
+	text-shadow: -1px 0 2px rgba(0, 0, 0, 0.6);
 }
 .social-img {
 	height: 20px;
@@ -823,7 +869,7 @@ form {
 	}
 
 	.content {
-		flex-direction: column;
+		/* flex-direction: column; */
 	}
 	.news {
 		width: 100%;
@@ -832,10 +878,10 @@ form {
 		width: 100%;
 	}
 	.image-responsive {
-		width: 100%;
+		/* width: 100%; */
 	}
 	.sidebar {
-		width: 100%;
+		/* width: 100%; */
 	}
 	.goods__cards {
 		flex-direction: column;
@@ -845,6 +891,9 @@ form {
 	}
 	.goods__card {
 		width: 100%;
+	}
+	.image {
+		width: 30%;
 	}
 	.cards {
 		flex-basis: 100%;
@@ -860,12 +909,29 @@ form {
 		justify-content: center;
 	}
 }
-@media (min-width: 360px) {
+@media (max-width: 640px) {
+	.content {
+		flex-direction: column;
+	}
+	.sidebar {
+		width: 100%;
+	}
+	.image {
+		width: 100%;
+	}
+	.image-responsive {
+		width: 100%;
+	}
+	.card {
+	}
+}
+
+@media (max-width: 360px) {
 	.image {
 		margin-right: 0;
 	}
 	.sidebar-title {
-		margin: 44px 0px 0px 0px;
+		/* margin: 44px 0px 0px 0px; */
 	}
 	.card-title {
 		font-size: 16px;
