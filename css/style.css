@@ -926,15 +926,16 @@ form {
 	}
 	.card {
 	}
+	.sidebar-title {
+		margin-top: 44px;
+	}
 }
 
 @media (max-width: 360px) {
 	.image {
 		margin-right: 0;
 	}
-	.sidebar-title {
-		/* margin: 44px 0px 0px 0px; */
-	}
+	
 	.card-title {
 		font-size: 16px;
 		margin-bottom: 24px;
