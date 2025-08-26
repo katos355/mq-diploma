@@ -27,10 +27,32 @@
 	padding: 0;
 	margin: 0;
 }
+a {
+	text-decoration: none; /* Только для обычного состояния */
+}
 
+/* a:hover {
+	text-decoration: underline; /* Кто-то добавил это */
+/* } */
+
+/* Решение: добавьте все состояния */
+/* a,
+a:hover,
+a:focus,
+a:active,
+a:visited {
+	text-decoration: none !important;
+}
 a {
 	text-decoration: none;
+	text-decoration: none !important;
 }
+a:hover {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none !important;
+} */ 
 
 ul {
 	padding: 0;
@@ -111,17 +133,31 @@ form {
 	align-items: center;
 	padding: 26px 0px 0px 0px;
 }
+.items{
+	
+}
 .items__link {
 	color: #ffffff;
 	text-transform: uppercase;
 	font-size: 13px;
 	font-weight: 400;
+	position: relative;   
+	
 }
-.items__link:hover {
-	text-decoration: underline;
-	/* padding: 0px 0px 2px 0px;
-	display: inline-block; */
+.items__link::after{
+	content: "";
+    display: block;
+    background: #ffffff;
+    height: 2px;
+		width: 0;
+		position: absolute;
+    margin: 1px auto auto;
+	
 }
+.items__link:hover::after{
+	width: 100%;
+}
+
 .items:not(:first-child) {
 	margin: 0px 0px 0px 33px;
 }
@@ -185,19 +221,30 @@ form {
 	font-size: 14px;
 	text-transform: uppercase;
 	font-weight: bold;
+	position: relative;
 }
-.trend-subtitle-item{
+.trend-subtitle::after{
+	content: "";
+    display: block;
+    background: #b59f5b;
+    height: 2px;
+		width: 0;
+		position: absolute;
+    margin: 1px auto auto;
+	
+}
+.trend-subtitle:hover::after{
+	width: 100%;
+}
+/* .trend-subtitle-item{
 	border: 2px solid transparent;
 	padding-bottom: 3px;
 }
 .trend-subtitle-item:hover {
 	text-decoration: underline;
   color: #b59f5b;
-}
-.subtitle-item:hover{
-	text-decoration: underline;
-  color: #b59f5b;
-}
+} */
+
 .trend-text {
 	margin: 9px 0px 0px 0px;
 	font-size: 20px;
@@ -292,6 +339,20 @@ form {
 	color: #c5b585;
 	font-size: 14px;
 	font-weight: bold;
+	position: relative;
+}
+.subtitle-item::after{
+	content: "";
+    display: block;
+    background: #c5b585;
+    height: 2px;
+		width: 0;
+		position: absolute;
+    margin: 1px auto auto;
+	
+}
+.subtitle-item:hover::after{
+	width: 100%;
 }
 .card-title {
 	text-transform: uppercase;
@@ -638,9 +699,9 @@ form {
 	z-index: 30;
 }
 .popup {
-	max-width: 320px;
+	max-width: 333px;
 	background-color: #fff;
-	padding: 15px 15px 15px 15px;
+	padding: 30px 15px 30px 15px;
 	position: relative;
 	z-index: 30;
 }
@@ -717,10 +778,11 @@ form {
 .form-textarea {
 	max-width: 100%;
 	width: 100%;
-	height: 100px;
+	height: 132px;
 	background-color: #f4f1f1;
 	box-sizing: border-box;
 	padding: 15px;
+	margin: 10px 0px 27px 0px;
 }
 .popup-btn {
 	display: flex;
@@ -947,7 +1009,7 @@ form {
 	.image {
 		margin-right: 0;
 	}
-	
+
 	.card-title {
 		font-size: 16px;
 		margin-bottom: 24px;
